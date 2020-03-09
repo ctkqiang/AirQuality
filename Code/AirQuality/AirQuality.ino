@@ -1,12 +1,12 @@
 /**
  * Copyright 2020 © John Melody Melissa
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -21,7 +21,7 @@
 
 #define BLYNK_PRINT Serial
 #define BLYNK_DEFAULT_PORT 80
-#define DHTPIN A2  
+#define DHTPIN A2
 #define DHTTYPE DHT11
 // Your ESP8266 baud rate:
 #define ESP8266_BAUD 9600
@@ -191,7 +191,7 @@ timer.setInterval(3000L, sendSensor2);
 timer.setInterval(12500L, notification);
 lcd.clear();
 }
-void loop()        
+void loop()
 {
 timer.run();
 gas_value =analogRead(A0);
@@ -209,7 +209,7 @@ Serial.print(F("Humidity: "));
  Serial.println(F("°C "));
        if (Blynk.connected()){
           lcd.setCursor(15, 0);
-          lcd.write(3); 
+          lcd.write(3);
           Blynk.run();
          }else{
          lcd.setCursor(15, 0);
@@ -220,9 +220,9 @@ Serial.print(F("Humidity: "));
 lcd.clear();
 if (Blynk.connected()){
           lcd.setCursor(15, 0);
-          lcd.write(3); 
+          lcd.write(3);
           lcd.setCursor(14, 0);
-          lcd.write(5); 
+          lcd.write(5);
          }else{
          lcd.setCursor(15, 0);
           lcd.write(4);
@@ -267,6 +267,5 @@ if (Blynk.connected()){
            noTone(buzzer);     // Stop sound...
 }else{
  digitalWrite(siren, LOW);
-}
-delay (2500);
+}delay (2500);
 }
